@@ -4,7 +4,7 @@ from models.google_api import generate_text, call_google_api
 
 chatbot_bp = Blueprint('chatbot', __name__)
 
-api_key = 'AIzaSyBJqN_UEFCjZE2XzuCY4UJy9IwGLEw-UTc'  # Updated API key
+api_key = os.getenv('GOOGLE_API_KEY')
 
 @chatbot_bp.route('/chatbot')
 def chatbot():
