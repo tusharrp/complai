@@ -1,0 +1,130 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#questions {
+    margin-bottom: 20px;
+}
+
+.why-question {
+    margin-bottom: 10px;
+}
+
+.why-question label {
+    font-weight: bold;
+}
+
+.why-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+/* Terminal-like display for results */
+.terminal {
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 10px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terminal input {
+    width: 32%; /* Ensure three text boxes fit within the terminal */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.why-question {
+    margin-bottom: 10px;
+}
+
+.why-input {
+    width: 100%;
+    padding: 5px;
+}
+
+#analyze {
+    margin-top: 10px;
+}
+
+.terminal {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.terminal button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 5px;
+}

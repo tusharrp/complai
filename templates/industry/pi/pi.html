@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comply | Industry</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pi.css') }}">
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: bold; color: #fff;">Comply</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: #fff; background-color: #4CAF50; color: #fff;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link logout-button" href="/Comply/index.html" style="color: #fff;">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-justify mt-4">
+        <a href="{{ url_for('pi.ehs') }}" class="btn btn-primary">EHS</a>
+        <button class="btn btn-primary" type="button">Regulatory Affairs</button>
+        <button class="btn btn-primary" type="button">Quality Assurance (QA)</button><br><br>
+        <button class="btn btn-primary" type="button">Quality Control (QC)</button>
+        <a href="{{ url_for('manufacturing.manufacturing') }}"class="btn btn-primary">Manufacturing and Production</a>
+        <button class="btn btn-primary" type="button">Supply Chain and Logistics</button><br><br>
+        <button class="btn btn-primary" type="button">Clinical Operations</button>
+        <button class="btn btn-primary" type="button">Pharmacovigilance</button>
+        <button class="btn btn-primary" type="button">Medical Affairs</button><br><br>
+        <button class="btn btn-primary" type="button">Sales and Marketing</button>
+        <button class="btn btn-primary" type="button">Information Technology (IT)</button>
+        <button class="btn btn-primary" type="button">Human Resources (HR)</button><br><br>
+        <button class="btn btn-primary" type="button">Legal and Compliance</button>
+        <button class="btn btn-primary" type="button">Research and Development (R&D)</button>
+        <button class="btn btn-primary" type="button">Finance and Accounting</button><br><br>
+        <button class="btn btn-primary" type="button">Facilities Management</button>
+        <button class="btn btn-primary" type="button">Customer Support and Service</button>
+        <button class="btn btn-primary" type="button">Training and Development</button><br><br>
+        <button class="btn btn-primary" type="button">Corporate Communications</button>
+        <button class="btn btn-primary" type="button">Audit and Compliance</button>
+        {% include 'chatbot.html' %}
+    </div>
+
+ 
+
+    <script src="{{ url_for('static', filename='js/pi.js') }}"></script>
+</body>
+</html>

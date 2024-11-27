@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5; /* Light grey background for the entire page */
+    color: #333; /* Darker text color for better readability */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4CAF50; /* Green background for the header */
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .register-button {
+    background: white; /* White background for the button */
+    color: #4CAF50; /* Green text color for the button */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header .register-button:hover {
+    background: #45a049; /* Darker green on hover */
+    color: white; /* White text on hover */
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 1em;
+}
+
+/* Equipment Grid */
+.page {
+    display: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 1em;
+}
+
+.page.active {
+    display: grid;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Equipment Item Styles */
+.equipment-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.equipment-item img {
+    width: 5cm;
+    height: 5cm;
+    object-fit: contain;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1em;
+}
+
+.equipment-item h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.equipment-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.equipment-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

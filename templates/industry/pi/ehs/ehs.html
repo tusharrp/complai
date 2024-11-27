@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Comply | Industry</title>
+
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+
+    <!-- font awesome  -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ehs.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: bold; color: #fff;">Comply</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="border-color: #fff; background-color: #4CAF50; color: #fff;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link logout-button" href="/Comply/index.html" style="color: #fff;">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="{{ url_for('jsa.jsa_index') }}" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Job Safety Analysis (JSA)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Safely handle biological materials in the laboratory.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="{{ url_for('ehs.sop') }}" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Standard Operating Procedures</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">List and classify hazardous materials used
+                                on-site.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="{{ url_for('ehs.deviation') }}" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Deviation</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Outline procedures for responding to emergencies.
+                            </h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="{{ url_for('work_order') }}" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Work Order</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Raise work order</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Environmental Impact Assessment (EIA)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Assess the potential environmental impacts of
+                            operations.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Chemical Hygiene Plan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Safely manage and handle chemicals in the workplace.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Personal Protective Equipment (PPE) Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Specify requirements for protective gear for
+                            employees.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Air Emissions Permit</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Comply with regulations regarding air pollutant
+                            emissions.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Water Discharge Permit</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Comply with regulations for water pollutant discharge.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Noise Control Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Manage and reduce noise levels in the workplace.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Waste Management Plan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Proper handling, storage, and disposal of waste
+                            materials.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Spill Response Plan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Procedures for managing and cleaning up chemical
+                            spills.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Indoor Air Quality Assessment</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ensure a healthy indoor environment for employees.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ergonomics Assessment</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Identify and address ergonomic risks in the workplace.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Radiation Safety Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Manage and control radiation exposure in the
+                            workplace.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contractor Safety Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Guidelines for ensuring safety when working with
+                            contractors.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Fire Prevention and Safety Plan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Prevent and respond to fire hazards in the facility.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Respiratory Protection Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ensure proper use of respiratory protection equipment.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Confined Space Entry Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Safely enter and work in confined spaces.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Electrical Safety Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Guidelines for safe use of electrical equipment.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Fall Protection Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Prevent falls from heights through proper safeguards.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hazard Communication Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Communicate information about chemical hazards.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Safety Data Sheets (SDS)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Provide detailed information about hazardous
+                            substances.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">First Aid and Emergency Response Procedures</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Outline first aid procedures and emergency response
+                            steps.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hazardous Energy Control (Lockout/Tagout)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ensure the isolation of energy sources during
+                            maintenance.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Workplace Inspection Checklist</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Regular assessments of the workplace for safety
+                            compliance.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Heat Stress Prevention Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Prevent and manage heat-related illnesses in the
+                            workplace.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Biological Safety Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Safely handle biological materials in the laboratory.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Incident Investigation Report</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Document and analyze workplace incidents for
+                            improvement.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Safety Training Records</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Keep records of employee safety training and
+                            certifications.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Asbestos Management Plan</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Manage and control asbestos-containing materials.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Environmental Monitoring Report</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Record and analyze environmental monitoring data.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Green Chemistry Initiatives</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Promote the use of environmentally friendly processes.
+                        </h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sustainability Report</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Document efforts and progress in environmental
+                            sustainability.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hazardous Waste Manifest</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Document the transportation of hazardous waste.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Stormwater Pollution Prevention Plan (SWPPP)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Prevent pollution of stormwater runoff.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Workplace Violence Prevention Program</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Develop strategies to prevent and respond to workplace
+                            violence.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Drug Enforcement Administration (DEA) Compliance</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Adhere to regulations for controlled substances.</h6>
+                        <!-- You can add more content here if needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'chatbot.html' %}
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/ehs.js') }}"></script>
+</body>
+
+</html>

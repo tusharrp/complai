@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Whys Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='why.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container" id="why-analysis-area">
+        <h1>5 Whys Analysis</h1>
+        <div id="questions">
+            <div class="why-question">
+                <label for="why1">Why?</label>
+                <input type="text" id="why1" name="why1" class="why-input">
+            </div>
+        </div>
+        <button id="analyze">Analyze</button>
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+        <button id="download">Download as JPG</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/why.js') }}"></script>
+    <script>
+        document.getElementById('download').addEventListener('click', function() {
+            const element = document.getElementById('why-analysis-area');
+            html2canvas(element).then(function(canvas) {
+                var link = document.createElement('a');
+                link.href = canvas.toDataURL('image/jpeg');
+                link.download = '5_whys_analysis.jpg';
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

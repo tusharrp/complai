@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Comply | Manufacturing</title>
+
+        <!-- bootstrap  -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- Google Fonts  -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+
+        <!-- font awesome  -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='manufacturing.css') }}"> 
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="font-weight: bold; color: #fff;">Comply</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: #fff; background-color: #4CAF50; color: #fff;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link logout-button" href="/Comply/index.html" style="color: #fff;">Log-Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="{{ url_for('manufacturing.reports') }}" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manufacturing Data Reporting</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Overview of the manufacturing process.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="{{ url_for('reactor.index') }}" style="text-decoration: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Preventive maintenance</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Preventive maintenance</h6>
+                                <!-- You can add more content here if needed -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="card">
+                            <div class="card-body">
+                               <h5 class="card-title">Deviation Management</h5>
+                               <h6 class="card-subtitle mb-2 text-muted">Procedures for handling deviations in the process.</h6>
+                               <!-- You can add more content here if needed -->
+                            </div>
+                        </div>
+                    </a>    
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Quality Control Procedures</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Steps to ensure product quality.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Batch Records</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Documentation for each batch produced.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Equipment Maintenance Logs</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Records of equipment maintenance and calibration.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Supplier Qualification</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Ensure suppliers meet quality standards.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Production Schedule</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Timelines and plans for production.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Inventory Management</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Manage raw materials and finished goods.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Manufacturing Audits</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Regular checks to ensure compliance.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Packaging Procedures</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Guidelines for product packaging.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Labeling Requirements</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Ensure correct product labeling.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Raw Material Specifications</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Criteria for raw materials used in production.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Release Criteria</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Standards for releasing products to market.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Training Records</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Documentation of employee training.</h6>
+                            <!-- You can add more content here if needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

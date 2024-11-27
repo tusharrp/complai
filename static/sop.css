@@ -1,0 +1,495 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Padding around content */
+  }
+  
+  /* Page container */
+  .page-container {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for margin-left */
+    z-index: 1; /* Ensure main content stays above other content */
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #4CAF50; /* Green header background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Space below header */
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  /* Main content section */
+  .main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-bottom: 20px; /* Space below main content */
+  }
+  
+  /* Section headings */
+  .section-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below heading */
+  }
+  
+  /* Button styles */
+  .button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Example section */
+  .example-section {
+    padding: 20px;
+    background-color: #f2f2f2; /* Light gray background */
+    margin-bottom: 20px; /* Space below section */
+  }
+  
+  /* Menu button anchor tag */
+  .menu-button {
+    background-color: #4CAF50; /* Green color */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow for inline styling */
+    font-size: 16px;
+    cursor: pointer; /* Indicate clickable element */
+  }
+  
+  .menu-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  h1, h2 {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0; /* Added margin for headings */
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%; /* Tables will fill available width */
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  }
+  
+  th {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Text box styles */
+  .placeholder {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    resize: vertical; /* Allow vertical resizing */
+    overflow: auto; /* Display scrollbar when needed */
+    min-height: 100px; /* Minimum height */
+  }
+  
+  /* Page liner styles (optional) */
+  .page-liner {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .page-liner h1,
+  .page-liner h2 {
+    margin: 0;
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Adjusted maximum width */
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Adjusted width relative to screen size */
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  /* Close button on hover */
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Textarea style inside the modal */
+  .modal-content textarea {
+    width: calc(100% - 20px);
+    height: 100px;
+    margin-bottom: 20px;
+    resize: none;
+    padding: 8px;
+    border: 2px solid #040404;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Additional styling */
+  #textareaInModal1 {
+    height: 300px;
+  }
+  
+  /* Style for input container */
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Style for input field */
+  .modal-input {
+    width: calc(100% - 100px);
+    padding: 8px;
+    margin-right: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Style for submit button */
+  .generatebutton, .submit-button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px; /* Adjusted margin */
+  }
+  
+  .generatebutton:hover,
+  .submit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Toggle button styles */
+  .sidebar-toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure the button is above other content */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar off-screen */
+    bottom: 0;
+    width: 250px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transition: left 0.3s ease; /* Smooth transition for left property */
+    z-index: 1; /* Lower z-index to keep below the toggle button */
+  }
+  
+  /* Sidebar content */
+  .sidebar-content {
+    margin-bottom: 20px; /* Space below sidebar content */
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    margin-top: 45px; /* Top margin for heading */
+    margin-bottom: 10px; /* Bottom margin for heading */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #4CAF50; /* Green color on hover */
+  }
+  
+  /* Adjust page container when sidebar is open */
+  .sidebar-open .page-container {
+    margin-left: 270px; /* Shift content to the right when sidebar is open */
+  }
+  
+  /* Shift main content when sidebar is open */
+  .sidebar-open #mainContent {
+    position: relative; /* Ensure it doesn't float over the sidebar */
+    z-index: 800; /* Keep main content behind the sidebar */
+  }
+  
+  /* Style for checkboxes */
+  .approval-section input[type="checkbox"] {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    transform: scale(1.2);
+  }
+  
+  /* Style for Approve button */
+  .approvebutton,.pdfbtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .approvebutton:hover,.pdfbtn {
+    background-color: #45a049;
+  }
+  
+  .employee-input-container {
+    position: relative; /* added */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .employee-textbox {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-button {
+    position: absolute;
+    right: 20px; /* adjusted */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0; /* removed padding */
+    font-size: 16px;
+    cursor: pointer;
+    width: 20px; /* adjusted */
+    height: 20px; /* adjusted */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px; /* added */
+  }
+  
+  .add-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  
+  .employee-input-container {
+    position: relative;
+  }
+  
+  .employee-details-section {
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%; /* Position below the employee-textbox */
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: none; /* Initially hide it */
+    width: 100%; /* Make it full width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Add shadow */
+  }
+  
+  .employee-details-section.active {
+    display: block; /* Show it when active */
+  }
+  
+  
+  /* Style for the form elements within employee details */
+  .employee-details-section form {
+    margin-bottom: 10px;
+  }
+  
+  .employee-details-section label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .employee-details-section input[type="text"],
+  .employee-details-section input[type="email"],
+  .employee-details-section textarea {
+    width: calc(100% - 20px); /* Adjust width as needed */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .employee-details-section button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .employee-details-section button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for the close button */
+  .employee-details-section .close-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .employee-details-section .close-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .delete-button {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: red; /* Example background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .employee-input-container {
+    position: relative;
+    margin-bottom: 10px; /* Adjust spacing between employee input containers */
+  }
+  
+  /* Style for the Add Employee button */
+  .add-employee-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Margin on top */
+  }
+  
+  /* Hover effect for the Add Employee button */
+  .add-employee-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .approvals-section,.train-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .approval-input, .train-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .approvebutton,.trainbutton {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .approvebutton:hover,.trainbutton:hover {
+    background-color: #3e8e41;
+  }
+  
+  

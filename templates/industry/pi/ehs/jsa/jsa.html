@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Safety Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='jsa.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/jsa.png') }}" alt="JSA Logo" class="logo">
+            </div>
+            <div class="form-container">
+                <h1>Job Safety Analysis</h1>
+                <div class="jsa-details">
+                    <div class="detail-row">
+                        <label for="project-ref">Project Ref./Job Title/Work Order:</label>
+                        <input type="text" id="project-ref" name="project-ref">
+                    </div>
+                    <div class="detail-row">
+                        <label for="job-location">Job Location:</label>
+                        <input type="text" id="job-location" name="job-location">
+                    </div>
+                    <div class="detail-row">
+                        <label for="jsa-no">JSA No.:</label>
+                        <input type="text" id="jsa-no" name="jsa-no">
+                    </div>
+                    <div class="detail-row">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" style="display: none; color: red; margin-bottom: 10px;"></div>
+
+        <table id="jsaTable">
+            <thead>
+                <tr>
+                    <th>Sl. No.</th>
+                    <th>Activity (Job Steps)</th>
+                    <th>Potential Hazard</th>
+                    <th>Severity Before Mitigation</th>
+                    <th>Required Control/Mitigation Measures & Checks</th>
+                    <th>Severity After Mitigation</th>
+                    <th>Action Party</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+
+        <button id="addRow" class="btn-add-row">Add New Row</button>
+
+        <div class="approvals">
+            <div class="approval-row">
+                <label for="engineer">Engineer (Panorama):</label>
+                <input type="text" id="engineer" name="engineer">
+            </div>
+            <div class="approval-row">
+                <label for="qp-engineer">QP Project Engineer:</label>
+                <input type="text" id="qp-engineer" name="qp-engineer">
+            </div>
+            <div class="approval-row">
+                <label for="production-supervisor">Production Supervisor:</label>
+                <input type="text" id="production-supervisor" name="production-supervisor">
+            </div>
+            <div class="approval-row">
+                <label for="asst-manager">Asst. Manager (if Required):</label>
+                <input type="text" id="asst-manager" name="asst-manager">
+            </div>
+        </div>
+
+        <button id="downloadPdf" class="btn-download">Download PDF</button>
+    </div>
+
+    <div id="activityModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Activity Details</h2>
+            <textarea id="activityDetails" rows="4" cols="50"></textarea>
+            <button id="submitActivity" onclick="">Submit</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jsa.js') }}"></script>
+</body>
+</html>

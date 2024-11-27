@@ -1,0 +1,298 @@
+/* Reset and basic styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f7fa;
+    height: 100%;
+    color: #333;
+    box-sizing: border-box; /* Add this for better box model handling */
+}
+
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Page layout */
+.page-container {
+    display: flex;
+    height: calc(100vh - 2cm); /* Adjust height to fit within the viewport */
+    margin: 1cm; /* Add 1cm margin on all sides */
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.left-panel {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f4f8;
+    border-left: 1px solid #e0e6ed;
+}
+
+.report-section {
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 20px 0 15px 0;
+    color: #34495e;
+}
+
+.report-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #7f8c8d;
+}
+
+/* Equipment item styling */
+.equipment-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    background-color: #f9fafc;
+    transition: box-shadow 0.3s ease;
+}
+
+.equipment-item:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.report-textarea {
+    width: 100%;
+    min-height: 90px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.report-textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Signature section */
+.signature-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.signature-box {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.signature-line {
+    border-top: 1px solid #34495e;
+    margin-top: 35px;
+}
+
+/* Button styling */
+.refresh-button, .save-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.refresh-button {
+    background-color: #2ecc71;
+    margin-right: 15px;
+}
+
+/* Style the "save-button" class */
+.save-button {
+    background-color: #3498db;  /* Blue color for the button */
+    border: none;                 /* Remove default border */
+    color: white;                 /* Text color for the button */
+    padding: 10px 20px;           /* Add some padding for better look */
+    cursor: pointer;             /* Indicate clickable behavior */
+  }
+  
+  /* Apply hover effect to both buttons */
+  .refresh-button:hover, .save-button:hover {
+    opacity: 0.9;                 /* Reduce opacity slightly on hover */
+  }
+  
+  /* Apply active effect to both buttons */
+  .refresh-button:active, .save-button:active {
+    transform: translateY(2px);  /* Move the button down 2px on press */
+  }
+  
+  /* Style the "View Analysis Report" link as a button */
+  a.button {
+    background-color: #1cdd29;  /* Light gray background color */
+    border: 1px solid #cccccc; /* Add a thin border */
+    color: black;                /* Text color */
+    padding: 10px 20px;           /* Add padding for consistency */
+    text-decoration: none;       /* Remove underline from link */
+    cursor: pointer;             /* Indicate clickable behavior */
+  }
+  
+  /* Optional: Add hover effect for the "View Analysis Report" link */
+  a.button:hover {
+    background-color: #dddddd;   /* Slightly darker background on hover */
+  }
+  
+
+/* Reactor image */
+.reactor-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Additional adjustments for compactness */
+p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 8px 0;
+    color: #576574;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+    
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+    }
+    
+    .right-panel {
+        height: 350px;
+    }
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 60%;
+    max-width: 600px;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+#modalInputText {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 15px;
+    resize: vertical;
+}
+
+#modalSubmitButton, #modalCloseButton {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#modalSubmitButton {
+    background-color: #3498db;
+    color: white;
+    margin-right: 10px;
+}
+
+#modalCloseButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#modalSubmitButton:hover, #modalCloseButton:hover {
+    opacity: 0.9;
+}
+
+/* Report textarea adjustments */
+.report-textarea {
+    overflow: hidden;
+    min-height: 80px;
+    max-height: 300px; /* Adjust this value as needed */
+}

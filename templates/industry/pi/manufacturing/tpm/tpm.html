@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Equipment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tpm.css') }}">
+</head>
+<body>
+    
+    <header>
+        <h1>Pharmaceutical Equipment</h1>
+        <a href="{{ url_for('reactor.registration') }}"class="register-button">Register</a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('page1')">Page 1</a></li>
+            <li><a href="#" onclick="showPage('page2')">Page 2</a></li>
+            <li><a href="#" onclick="showPage('page3')">Page 3</a></li>
+            <li><a href="#" onclick="showPage('page4')">Page 4</a></li>
+            <li><a href="#" onclick="showPage('page5')">Page 5</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="page1" class="page">
+            <!-- Page 1 equipment items -->
+            <div class="equipment-item">
+                <a href="{{ url_for('reactor.reactor') }}">
+                    <img src="{{ url_for('static', filename='images/360_F_394872322_qqNsvW49xYIjWX72BtbiJUVyTeb54Isl.jpg') }}" alt="Reactor">
+                    <h2>Reactor</h2>
+                    <p>Description of Reactor</p>
+                </a>
+            </div>
+            
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/pharma-centrifuge-machine.jpg') }}" alt="Centrifuge">
+                <h2>Centrifuge</h2>
+                <p>Description of Centrifuge</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/chromatography.jpg') }}" alt="Chromatography System">
+                <h2>Chromatography System</h2>
+                <p>Description of Chromatography System</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/ferometer.jpeg') }}" alt="Fermentor">
+                <h2>Fermentor</h2>
+                <p>Description of Fermentor</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/tablet press.jpeg') }}" alt="Tablet Press">
+                <h2>Tablet Press</h2>
+                <p>Description of Tablet Press</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/HPLC.jpeg') }}" alt="HPLC">
+                <h2>HPLC</h2>
+                <p>Description of HPLC</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/Mixer.jpeg') }}" alt="Mixer">
+                <h2>Mixer</h2>
+                <p>Description of Mixer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/dryer.jpeg') }}" alt="dryer">
+                <h2>Dryer</h2>
+                <p>Description of Dryer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="{{ url_for('static', filename='images/Dryer.jpeg') }}" alt="Dryer">
+                <h2>Spectrophotometer</h2>
+                <p>Description of Spectrophotometer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/stirrer.jpg" alt="Stirrer">
+                <h2>Stirrer</h2>
+                <p>Description of Stirrer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/freeze-dryer.jpg" alt="Freeze Dryer">
+                <h2>Freeze Dryer</h2>
+                <p>Description of Freeze Dryer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/granulator.jpg" alt="Granulator">
+                <h2>Granulator</h2>
+                <p>Description of Granulator</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/blender.jpg" alt="Blender">
+                <h2>Blender</h2>
+                <p>Description of Blender</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/coater.jpg" alt="Coater">
+                <h2>Coater</h2>
+                <p>Description of Coater</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/reactor.jpg" alt="Autoclave">
+                <h2>Autoclave</h2>
+                <p>Description of Autoclave</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/filter.jpg" alt="Filter">
+                <h2>Filter</h2>
+                <p>Description of Filter</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/isolator.jpg" alt="Isolator">
+                <h2>Isolator</h2>
+                <p>Description of Isolator</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/lyophilizer.jpg" alt="Lyophilizer">
+                <h2>Lyophilizer</h2>
+                <p>Description of Lyophilizer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/filling-machine.jpg" alt="Filling Machine">
+                <h2>Filling Machine</h2>
+                <p>Description of Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/sequencer.jpg" alt="Sequencer">
+                <h2>Sequencer</h2>
+                <p>Description of Sequencer</p>
+            </div>
+        </section>
+        
+            <!-- Add more equipment items for Page 1 up to 20 -->
+        </section>
+        <section id="page2" class="page" style="display: none;">
+            <!-- Page 2 equipment items -->
+            <div class="equipment-item">
+                <img src="images/tablet-counting-machine.jpg" alt="Tablet Counting Machine">
+                <h2>Tablet Counting Machine</h2>
+                <p>Description of Tablet Counting Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/capsule-filling-machine.jpg" alt="Capsule Filling Machine">
+                <h2>Capsule Filling Machine</h2>
+                <p>Description of Capsule Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/vial-filling-machine.jpg" alt="Vial Filling Machine">
+                <h2>Vial Filling Machine</h2>
+                <p>Description of Vial Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/tablet-deduster.jpg" alt="Tablet Deduster">
+                <h2>Tablet Deduster</h2>
+                <p>Description of Tablet Deduster</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/inspection-machine.jpg" alt="Inspection Machine">
+                <h2>Inspection Machine</h2>
+                <p>Description of Inspection Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/blister-packing-machine.jpg" alt="Blister Packing Machine">
+                <h2>Blister Packing Machine</h2>
+                <p>Description of Blister Packing Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/capsule-polisher.jpg" alt="Capsule Polisher">
+                <h2>Capsule Polisher</h2>
+                <p>Description of Capsule Polisher</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/tablet-coating-machine.jpg" alt="Tablet Coating Machine">
+                <h2>Tablet Coating Machine</h2>
+                <p>Description of Tablet Coating Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/tablet-testing-machine.jpg" alt="Tablet Testing Machine">
+                <h2>Tablet Testing Machine</h2>
+                <p>Description of Tablet Testing Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/capsule-sealing-machine.jpg" alt="Capsule Sealing Machine">
+                <h2>Capsule Sealing Machine</h2>
+                <p>Description of Capsule Sealing Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/vacuum-emulsifier.jpg" alt="Vacuum Emulsifier">
+                <h2>Vacuum Emulsifier</h2>
+                <p>Description of Vacuum Emulsifier</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/ultrasonic-washer.jpg" alt="Ultrasonic Washer">
+                <h2>Ultrasonic Washer</h2>
+                <p>Description of Ultrasonic Washer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/water-still.jpg" alt="Water Still">
+                <h2>Water Still</h2>
+                <p>Description of Water Still</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/sachet-packing-machine.jpg" alt="Sachet Packing Machine">
+                <h2>Sachet Packing Machine</h2>
+                <p>Description of Sachet Packing Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/granulation-line.jpg" alt="Granulation Line">
+                <h2>Granulation Line</h2>
+                <p>Description of Granulation Line</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/sterilizer.jpg" alt="Sterilizer">
+                <h2>Sterilizer</h2>
+                <p>Description of Sterilizer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/depyrogenation-tunnel.jpg" alt="Depyrogenation Tunnel">
+                <h2>Depyrogenation Tunnel</h2>
+                <p>Description of Depyrogenation Tunnel</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/bottle-filling-machine.jpg" alt="Bottle Filling Machine">
+                <h2>Bottle Filling Machine</h2>
+                <p>Description of Bottle Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/liquid-filling-machine.jpg" alt="Liquid Filling Machine">
+                <h2>Liquid Filling Machine</h2>
+                <p>Description of Liquid Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/capping-machine.jpg" alt="Capping Machine">
+                <h2>Capping Machine</h2>
+                <p>Description of Capping Machine</p>
+            </div>
+        </section>
+        
+            <!-- Add more equipment items for Page 2 up to 20 -->
+            <section id="page3" class="page" style="display: none;">
+                <!-- Page 3 equipment items -->
+                <div class="equipment-item">
+                    <img src="images/homogenizer.jpg" alt="Homogenizer">
+                    <h2>Homogenizer</h2>
+                    <p>Description of Homogenizer</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/ph-meter.jpg" alt="pH Meter">
+                    <h2>pH Meter</h2>
+                    <p>Description of pH Meter</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/dissolution-tester.jpg" alt="Dissolution Tester">
+                    <h2>Dissolution Tester</h2>
+                    <p>Description of Dissolution Tester</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/vacuum-pump.jpg" alt="Vacuum Pump">
+                    <h2>Vacuum Pump</h2>
+                    <p>Description of Vacuum Pump</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/bioreactor.jpg" alt="Bioreactor">
+                    <h2>Bioreactor</h2>
+                    <p>Description of Bioreactor</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/laminar-airflow.jpg" alt="Laminar Airflow">
+                    <h2>Laminar Airflow</h2>
+                    <p>Description of Laminar Airflow</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/vortex-mixer.jpg" alt="Vortex Mixer">
+                    <h2>Vortex Mixer</h2>
+                    <p>Description of Vortex Mixer</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/balance.jpg" alt="Analytical Balance">
+                    <h2>Analytical Balance</h2>
+                    <p>Description of Analytical Balance</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/sonicator.jpg" alt="Sonicator">
+                    <h2>Sonicator</h2>
+                    <p>Description of Sonicator</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/sieve-shaker.jpg" alt="Sieve Shaker">
+                    <h2>Sieve Shaker</h2>
+                    <p>Description of Sieve Shaker</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/purified-water-system.jpg" alt="Purified Water System">
+                    <h2>Purified Water System</h2>
+                    <p>Description of Purified Water System</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/vacuum-oven.jpg" alt="Vacuum Oven">
+                    <h2>Vacuum Oven</h2>
+                    <p>Description of Vacuum Oven</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/microcentrifuge.jpg" alt="Microcentrifuge">
+                    <h2>Microcentrifuge</h2>
+                    <p>Description of Microcentrifuge</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/water-bath.jpg" alt="Water Bath">
+                    <h2>Water Bath</h2>
+                    <p>Description of Water Bath</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/fume-hood.jpg" alt="Fume Hood">
+                    <h2>Fume Hood</h2>
+                    <p>Description of Fume Hood</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/rotary-evaporator.jpg" alt="Rotary Evaporator">
+                    <h2>Rotary Evaporator</h2>
+                    <p>Description of Rotary Evaporator</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/incubator.jpg" alt="Incubator">
+                    <h2>Incubator</h2>
+                    <p>Description of Incubator</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/hot-plate.jpg" alt="Hot Plate">
+                    <h2>Hot Plate</h2>
+                    <p>Description of Hot Plate</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/refrigerated-centrifuge.jpg" alt="Refrigerated Centrifuge">
+                    <h2>Refrigerated Centrifuge</h2>
+                    <p>Description of Refrigerated Centrifuge</p>
+                </div>
+                <div class="equipment-item">
+                    <img src="images/magnetic-stirrer.jpg" alt="Magnetic Stirrer">
+                    <h2>Magnetic Stirrer</h2>
+                    <p>Description of Magnetic Stirrer</p>
+                </div>
+            </section>
+            
+            <!-- Add more equipment items for Page 3 up to 20 -->
+        </section>
+        <section id="page4" class="page" style="display: none;">
+            <!-- Page 4 equipment items -->
+            <div class="equipment-item">
+                <img src="images/lyophilizer.jpg" alt="Lyophilizer">
+                <h2>Lyophilizer</h2>
+                <p>Description of Lyophilizer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/humidity-chamber.jpg" alt="Humidity Chamber">
+                <h2>Humidity Chamber</h2>
+                <p>Description of Humidity Chamber</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom.jpg" alt="Cleanroom">
+                <h2>Cleanroom</h2>
+                <p>Description of Cleanroom</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/vacuum-dryer.jpg" alt="Vacuum Dryer">
+                <h2>Vacuum Dryer</h2>
+                <p>Description of Vacuum Dryer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/granulator.jpg" alt="Granulator">
+                <h2>Granulator</h2>
+                <p>Description of Granulator</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/roller-compactor.jpg" alt="Roller Compactor">
+                <h2>Roller Compactor</h2>
+                <p>Description of Roller Compactor</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/tablet-compression-machine.jpg" alt="Tablet Compression Machine">
+                <h2>Tablet Compression Machine</h2>
+                <p>Description of Tablet Compression Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/filling-machine.jpg" alt="Filling Machine">
+                <h2>Filling Machine</h2>
+                <p>Description of Filling Machine</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/freeze-dryer.jpg" alt="Freeze Dryer">
+                <h2>Freeze Dryer</h2>
+                <p>Description of Freeze Dryer</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/sterility-testing-isolator.jpg" alt="Sterility Testing Isolator">
+                <h2>Sterility Testing Isolator</h2>
+                <p>Description of Sterility Testing Isolator</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/air-shower.jpg" alt="Air Shower">
+                <h2>Air Shower</h2>
+                <p>Description of Air Shower</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/depyrogenation-oven.jpg" alt="Depyrogenation Oven">
+                <h2>Depyrogenation Oven</h2>
+                <p>Description of Depyrogenation Oven</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-pass-through.jpg" alt="Cleanroom Pass-Through">
+                <h2>Cleanroom Pass-Through</h2>
+                <p>Description of Cleanroom Pass-Through</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-ceiling.jpg" alt="Cleanroom Ceiling">
+                <h2>Cleanroom Ceiling</h2>
+                <p>Description of Cleanroom Ceiling</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-furniture.jpg" alt="Cleanroom Furniture">
+                <h2>Cleanroom Furniture</h2>
+                <p>Description of Cleanroom Furniture</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-hepa-filter.jpg" alt="Cleanroom HEPA Filter">
+                <h2>Cleanroom HEPA Filter</h2>
+                <p>Description of Cleanroom HEPA Filter</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-wall-panel.jpg" alt="Cleanroom Wall Panel">
+                <h2>Cleanroom Wall Panel</h2>
+                <p>Description of Cleanroom Wall Panel</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-lighting.jpg" alt="Cleanroom Lighting">
+                <h2>Cleanroom Lighting</h2>
+                <p>Description of Cleanroom Lighting</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-flooring.jpg" alt="Cleanroom Flooring">
+                <h2>Cleanroom Flooring</h2>
+                <p>Description of Cleanroom Flooring</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-monitoring-system.jpg" alt="Cleanroom Monitoring System">
+                <h2>Cleanroom Monitoring System</h2>
+                <p>Description of Cleanroom Monitoring System</p>
+            </div>
+        </section>
+        
+        <section id="page5" class="page" style="display: none;">
+            <!-- Page 5 equipment items -->
+            <div class="equipment-item">
+                <img src="images/cleanroom-door.jpg" alt="Cleanroom Door">
+                <h2>Cleanroom Door</h2>
+                <p>Description of Cleanroom Door</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-locker.jpg" alt="Cleanroom Locker">
+                <h2>Cleanroom Locker</h2>
+                <p>Description of Cleanroom Locker</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-sink.jpg" alt="Cleanroom Sink">
+                <h2>Cleanroom Sink</h2>
+                <p>Description of Cleanroom Sink</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-benches.jpg" alt="Cleanroom Benches">
+                <h2>Cleanroom Benches</h2>
+                <p>Description of Cleanroom Benches</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-garment-storage.jpg" alt="Cleanroom Garment Storage">
+                <h2>Cleanroom Garment Storage</h2>
+                <p>Description of Cleanroom Garment Storage</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-gowning-room.jpg" alt="Cleanroom Gowning Room">
+                <h2>Cleanroom Gowning Room</h2>
+                <p>Description of Cleanroom Gowning Room</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-dispensary.jpg" alt="Cleanroom Dispensary">
+                <h2>Cleanroom Dispensary</h2>
+                <p>Description of Cleanroom Dispensary</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-decontamination-shower.jpg" alt="Cleanroom Decontamination Shower">
+                <h2>Cleanroom Decontamination Shower</h2>
+                <p>Description of Cleanroom Decontamination Shower</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-garment-storage-cabinet.jpg" alt="Cleanroom Garment Storage Cabinet">
+                <h2>Cleanroom Garment Storage Cabinet</h2>
+                <p>Description of Cleanroom Garment Storage Cabinet</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-airlock.jpg" alt="Cleanroom Airlock">
+                <h2>Cleanroom Airlock</h2>
+                <p>Description of Cleanroom Airlock</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-storage-racks.jpg" alt="Cleanroom Storage Racks">
+                <h2>Cleanroom Storage Racks</h2>
+                <p>Description of Cleanroom Storage Racks</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-shelving.jpg" alt="Cleanroom Shelving">
+                <h2>Cleanroom Shelving</h2>
+                <p>Description of Cleanroom Shelving</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-material-handling-equipment.jpg" alt="Cleanroom Material Handling Equipment">
+                <h2>Cleanroom Material Handling Equipment</h2>
+                <p>Description of Cleanroom Material Handling Equipment</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-carts.jpg" alt="Cleanroom Carts">
+                <h2>Cleanroom Carts</h2>
+                <p>Description of Cleanroom Carts</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-trolleys.jpg" alt="Cleanroom Trolleys">
+                <h2>Cleanroom Trolleys</h2>
+                <p>Description of Cleanroom Trolleys</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-hvac.jpg" alt="Cleanroom HVAC">
+                <h2>Cleanroom HVAC</h2>
+                <p>Description of Cleanroom HVAC</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-light-fixtures.jpg" alt="Cleanroom Light Fixtures">
+                <h2>Cleanroom Light Fixtures</h2>
+                <p>Description of Cleanroom Light Fixtures</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-panel-system.jpg" alt="Cleanroom Panel System">
+                <h2>Cleanroom Panel System</h2>
+                <p>Description of Cleanroom Panel System</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-washdown-station.jpg" alt="Cleanroom Washdown Station">
+                <h2>Cleanroom Washdown Station</h2>
+                <p>Description of Cleanroom Washdown Station</p>
+            </div>
+            <div class="equipment-item">
+                <img src="images/cleanroom-waste-disposal.jpg" alt="Cleanroom Waste Disposal">
+                <h2>Cleanroom Waste Disposal</h2>
+                <p>Description of Cleanroom Waste Disposal</p>
+            </div>
+        </section>
+        
+    </main>
+    <script src="{{ url_for('static', filename='js/tpm.js') }}"></script>
+</body>
+</html>

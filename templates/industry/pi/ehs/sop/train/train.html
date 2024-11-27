@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comply Software</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='train.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Comply</h1>
+        <div class="textarea-container">
+            <div class="textarea-box">
+                <textarea id="trainingScript" placeholder="Enter training script..." rows="10" cols="50"></textarea>
+                <button onclick="generateTrainingScript()">Generate Training Script</button>
+            </div>
+            <div class="textarea-box">
+                <textarea id="assistantScript" placeholder="Enter assistant tasks..." rows="10" cols="50"></textarea>
+                <button onclick="assignAssistant()">Assign Assistant</button>
+                <div class="half-buttons">
+                    <button onclick="assignVocal()" id="vocalButton">Vocal</button>
+                    <button onclick="assignVisual()" id="visualButton">Visual</button>
+                    <div id="videoContainer">
+                        <iframe id="youtubeVideo" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video element -->
+        <video id="cornerVideo" width="320" height="240" muted style="position: fixed; bottom: 10px; right: 10px; display: none;">
+            <source src="{{ url_for('static', filename='video/sample.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        {% include 'chatbot.html' %}
+    </div>
+    <script src="{{ url_for('static', filename='js/train.js') }}"></script>
+</body>
+</html>

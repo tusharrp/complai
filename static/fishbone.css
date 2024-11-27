@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#problem {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.fishbone-diagram {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.spine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #333;
+}
+
+.category {
+    position: absolute;
+    width: 30%;
+    height: 40%;
+}
+
+.category h3 {
+    margin: 0;
+    padding: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.causes {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    opacity: 0.8; /* Adjust opacity to your preference */
+}
+
+#man { top: 0; left: 0; }
+#machine { top: 0; right: 0; }
+#material { top: 60%; left: 0; }
+#method { top: 60%; right: 0; }
+#measurement { top: 0; left: 35%; }
+#environment { top: 60%; right: 35%; }
+
+.problem-statement {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    max-width: 200px;
+    text-align: center;
+}

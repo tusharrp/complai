@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventive Maintenance Equipment Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Preventive Maintenance Equipment Registration</h1>
+</header>
+
+<form id="registrationForm" action="/" method="post" onsubmit="handleSubmit(event)">
+    <div class="form-group">
+        <label for="equipment-details">Equipment Details</label>
+        <textarea id="equipment-details" name="equipment-details"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <textarea id="date" name="date"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <textarea id="location" name="location"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="installed-date">Installed Date</label>
+        <textarea id="installed-date" name="installed-date"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="production-area">Production Area</label>
+        <textarea id="production-area" name="production-area"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="maintenance-schedule">Maintenance Schedule</label>
+        <textarea id="maintenance-schedule" name="maintenance-schedule"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="last-maintenance-date">Last Maintenance Date</label>
+        <textarea id="last-maintenance-date" name="last-maintenance-date"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="next-maintenance-date">Next Maintenance Date</label>
+        <textarea id="next-maintenance-date" name="next-maintenance-date"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="responsible-person">Responsible Person</label>
+        <textarea id="responsible-person" name="responsible-person"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="contact-details">Contact Details</label>
+        <textarea id="contact-details" name="contact-details"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="equipment-status">Equipment Status</label>
+        <textarea id="equipment-status" name="equipment-status"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="maintenance-type">Maintenance Type</label>
+        <textarea id="maintenance-type" name="maintenance-type"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="parts-replaced">Parts Replaced</label>
+        <textarea id="parts-replaced" name="parts-replaced"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="parts-needed">Parts Needed</label>
+        <textarea id="parts-needed" name="parts-needed"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="maintenance-notes">Maintenance Notes</label>
+        <textarea id="maintenance-notes" name="maintenance-notes"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="cost">Cost</label>
+        <textarea id="cost" name="cost"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="supplier">Supplier</label>
+        <textarea id="supplier" name="supplier"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="warranty-status">Warranty Status</label>
+        <textarea id="warranty-status" name="warranty-status"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="approval-status">Approval Status</label>
+        <textarea id="approval-status" name="approval-status"></textarea>
+    </div>
+   
+    <!-- Add other form fields as needed -->
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Optionally, handle form data or additional logic here
+        // Example:
+        // const formData = new FormData(event.target);
+        // console.log(formData.get('equipment-details'));
+
+        // Redirect to another page (tpm.html) or perform other actions
+        window.location.href = "{{ url_for('reactor.index') }}";
+    }
+</script>
+
+</body>
+</html>

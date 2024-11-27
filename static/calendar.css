@@ -1,0 +1,130 @@
+/* Reset default styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Example background color */
+}
+
+/* Page container */
+.page-container {
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width as per your design */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Calendar container */
+.calendar-container {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Calendar header */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Calendar body */
+.calendar-body {
+    padding: 10px;
+}
+
+/* Weekdays */
+.weekdays {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.weekday {
+    width: calc(100% / 7); /* Equal width for each weekday */
+    text-align: center;
+}
+
+/* Days */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days */
+    gap: 4px; /* Gap between day cells */
+}
+
+.day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #ddd; /* Border for each day */
+    background-color: #fff; /* Background color for each day */
+}
+
+.today {
+    background-color: #4CAF50; /* Green background for today's date */
+    color: white;
+    font-weight: bold;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Work order indicators */
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+/* Status colors */
+.pending {
+    background-color: yellow;
+    color: orange; /* Text color for pending status */
+}
+
+.initiated {
+    background-color: orange;
+    color: darkblue; /* Text color for initiated status */
+}
+
+.in-progress {
+    background-color: blue;
+    color: blue; /* Text color for in-progress status */
+}
+
+.completed {
+    background-color: green;
+    color: green; /* Text color for completed status */
+}
+
+/* Work order items */
+.work-order-item {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,86 @@
+/* registration.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5; /* Light grey background for the entire page */
+    color: #333; /* Darker text color for better readability */
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Green color for the main title */
+    margin-bottom: 40px;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+    background: #fff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for text areas */
+    background: #f9f9f9; /* Light background for text areas */
+    font-size: 16px;
+}
+
+textarea:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    background: #eafaf1; /* Light green background on focus */
+    outline: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #4CAF50; /* Green background for the button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #45a049; /* Darker green on hover */
+}
+
+.page-breaker {
+    border-top: 2px solid #4CAF50; /* Green border as page breaker */
+    margin: 20px 0;
+}
+
+/* Add some texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('texture.png'); /* Add your texture image here */
+    opacity: 0.1; /* Low opacity for subtle texture */
+    z-index: -1;
+}

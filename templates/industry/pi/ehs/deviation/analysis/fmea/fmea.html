@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failure Mode and Effects Analysis (FMEA)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .input-section {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        #input-text {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            resize: none;
+        }
+        #generate {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .fmea-diagram {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            background-image: url("{{ url_for('static', filename='images/fmae_img.jpg') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.8;
+        }
+        .step {
+            position: absolute;
+            width: 180px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .step h3 {
+            margin-top: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .result {
+            width: 100%;
+            height: 60px;
+            resize: none;
+            font-size: 12px;
+        }
+        #step1 { top: 1%; right: 1%; transform: translateX(-50%); }
+        #step2 { top: 50%; right: 0%; }
+        #step3 { bottom: 0%; right: 35%; }
+        #step4 { bottom: 30%; left: 15%; transform: translateX(-50%); }
+        #step5 { bottom: 75%; left: 5%; }
+        #download {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Failure Mode and Effects Analysis (FMEA)</h1>
+        <div class="input-section">
+            <textarea id="input-text" placeholder="Enter your FMEA input here..."></textarea>
+            <button id="generate">Generate FMEA</button>
+        </div>
+        <div id="fmea-diagram" class="fmea-diagram">
+            <div class="step" id="step1">
+                <h3>Step 1: Determining failure mode</h3>
+                <textarea class="result" readonly></textarea>
+            </div>
+            <div class="step" id="step2">
+                <h3>Step 2: Assessing severity</h3>
+                <textarea class="result" readonly></textarea>
+            </div>
+            <div class="step" id="step3">
+                <h3>Step 3: Assigning probability number</h3>
+                <textarea class="result" readonly></textarea>
+            </div>
+            <div class="step" id="step4">
+                <h3>Step 4: Assigning detection number</h3>
+                <textarea class="result" readonly></textarea>
+            </div>
+            <div class="step" id="step5">
+                <h3>Step 5: Calculating risk priority number</h3>
+                <textarea class="result" readonly></textarea>
+            </div>
+        </div>
+        <button id="download">Download as JPG</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/fmea.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('download').addEventListener('click', function() {
+            html2canvas(document.getElementById('fmea-diagram')).then(canvas => {
+                // Create a new canvas with padding
+                const padding = 0;
+                const newCanvas = document.createElement('canvas');
+                newCanvas.width = canvas.width + 0 * padding;
+                newCanvas.height = canvas.height + 8 * padding;
+                const ctx = newCanvas.getContext('2d');
+
+                // Fill the new canvas with white background
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(0, 0, newCanvas.width, newCanvas.height);
+
+                // Draw the original canvas onto the new canvas with padding
+                ctx.drawImage(canvas, padding, padding);
+
+                // Create a link to download the image
+                const link = document.createElement('a');
+                link.download = 'fmea_diagram.jpg';
+                link.href = newCanvas.toDataURL('image/jpeg');
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

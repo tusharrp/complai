@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Deviation Investigation Report Template</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='deviation.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="{{ url_for('static', filename='js/deviation.js') }}"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Toggle Sidebar Button -->
+    <button id="sidebarToggleButton" class="sidebar-toggle-button" onclick="toggleSidebar()">>->-></button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+      <!-- Sidebar content -->
+      <!-- Collaboration section -->
+      <div class="section collaboration-section">
+        <h2>Collaboration</h2>
+        <form id="employeeForm">
+          <!-- Employee 1 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 1" id="employee-textbox-1">
+            <button type="button" class="add-button" data-index="1" onclick="addEmployee(event, 1)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 1)"><i
+                class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 1</h2>
+              <form>
+                <label for="name1">Name:</label>
+                <input type="text" id="name1" name="name1" placeholder="Name"><br><br>
+                <label for="email1">Email:</label>
+                <input type="email" id="email1" name="email1" placeholder="Email"><br><br>
+                <label for="jobDetails1">Job Details:</label>
+                <textarea id="jobDetails1" name="jobDetails1" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 1)">Add
+                  Employee</button>
+              </form>
+            </div>
+            <ul id="employee-list"></ul>
+          </div>
+          <!-- Employee 2 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 2" id="employee-textbox-2">
+            <button type="button" class="add-button" data-index="2" onclick="addEmployee(event, 2)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 2)"><i
+                class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 2</h2>
+              <form>
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" name="name2" placeholder="Name"><br><br>
+                <label for="email2">Email:</label>
+                <input type="email" id="email2" name="email2" placeholder="Email"><br><br>
+                <label for="jobDetails2">Job Details:</label>
+                <textarea id="jobDetails2" name="jobDetails2" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 2)">Add
+                  Employee</button>
+              </form>
+            </div>
+          </div>
+          <!-- Employee 3 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 3" id="employee-textbox-3">
+            <button type="button" class="add-button" data-index="3" onclick="addEmployee(event, 3)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 3)"><i
+                class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 3</h2>
+              <form>
+                <label for="name3">Name:</label>
+                <input type="text" id="name3" name="name3" placeholder="Name"><br><br>
+                <label for="email3">Email:</label>
+                <input type="email" id="email3" name="email3" placeholder="Email"><br><br>
+                <label for="jobDetails3">Job Details:</label>
+                <textarea id="jobDetails3" name="jobDetails3" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 3)">Add
+                  Employee</button>
+              </form>
+            </div>
+          </div>
+          <!-- Employee 4 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 4" id="employee-textbox-4">
+            <button type="button" class="add-button" data-index="4" onclick="addEmployee(event, 4)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 4)"><i
+                class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 4</h2>
+              <form>
+                <label for="name4">Name:</label>
+                <input type="text" id="name4" name="name4" placeholder="Name"><br><br>
+                <label for="email4">Email:</label>
+                <input type="email" id="email4" name="email4" placeholder="Email"><br><br>
+                <label for="jobDetails4">Job Details:</label>
+                <textarea id="jobDetails4" name="jobDetails4" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 4)">Add
+                  Employee</button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Approvals section -->
+      <div class="section approvals-section">
+        <h2>Approvals</h2>
+        <input type="text" class="employee-textbox approval-input" placeholder="Approval 1">
+        <input type="text" class="employee-textbox approval-input" placeholder="Approval 2">
+        <input type="text" class="employee-textbox approval-input" placeholder="Approval 3">
+        <input type="text" class="employee-textbox approval-input" placeholder="Approval 4">
+        <button type="button" onclick="approve()" class="approvebutton">Approve</button>
+      </div>
+      <!-- Training section -->
+      <div class="section train-section">
+        <h2>Training</h2>
+        <input type="text" class="employee-textbox train-input" placeholder="Training 1">
+        <input type="text" class="employee-textbox train-input" placeholder="Training 2">
+        <input type="text" class="employee-textbox train-input" placeholder="Training 3">
+        <input type="text" class="employee-textbox train-input" placeholder="Training 4">
+        <button type="button" onclick="train()" class="trainbutton">Training</button>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="page-container" id="mainContent">
+      <div class="header">
+        <h1>Comply</h1>
+        <h2>QUALITY MANAGEMENT SYSTEM</h2>
+      </div>
+
+      <div class="main-content">
+        <h1>Deviation Investigation Report</h1>
+        <h2>Quality Management System</h2>
+        <table>
+          <tr>
+            <th>Section</th>
+            <th>Description</th>
+          </tr>
+        </table>
+        <h3>1.0 Deviation Description</h3>
+        <p>
+        <div id="deviationDescription" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>2.0 Impact Assessment</h3>
+        <p>
+        <div id="impactAssessment" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>3.0 Root Cause Analysis</h3>
+        <p>
+        <div id="rootCauseAnalysis" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+        <h3>Tools for Analysis</h3>
+        <p>
+          <label for="root-cause-analysis">Root Cause Analysis</label><br>
+          <select id="root-cause-analysis" onchange="loadAnalysisTool(this.value)">
+            <option value="" disabled selected>Select Root Cause Analysis</option>
+            <option value="5-whys">5 Whys</option>
+            <option value="fishbone-diagram">Fishbone Diagram (Ishikawa Diagram)</option>
+            <option value="fmea">Failure Modes and Effects Analysis (FMEA)</option>
+            <option value="fta">Fault Tree Analysis (FTA)</option>
+          </select>
+        </p>
+        
+        <script>
+          function loadAnalysisTool(tool) {
+            if (tool === '5-whys') {
+              window.location.href = '/industry/pi/ehs/deviation/analysis/why';
+            } else if (tool === 'fishbone-diagram') {
+              window.location.href = '/industry/pi/ehs/deviation/analysis/fishbone';
+            } else if (tool === 'fmea') {
+              window.location.href = '/industry/pi/ehs/deviation/analysis/fmea';
+            } else if (tool === 'fta') {
+              window.location.href = '/industry/pi/ehs/deviation/analysis/fault_tree';
+            }
+          }
+        </script>
+
+        <h3>Tools for Analysis</h3>
+        <input type="file" id="imageLoader" accept="image/jpeg" />
+        <div id="imageContainer"></div>
+
+        <h3>4.0 Corrective Actions</h3>
+        <p>
+        <div id="correctiveActions" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>5.0 Preventive Actions</h3>
+        <p>
+        <div id="preventiveActions" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>6.0 Investigation Procedure</h3>
+        <p>
+        <div id="investigationProcedure" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>7.0 Quality Assurance Review</h3>
+        <p>
+        <div id="qualityAssuranceReview" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>8.0 CAPA Implementation</h3>
+        <p>
+        <div id="capaImplementation" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>9.0 Supporting Documents</h3>
+        <p>
+        <div id="supportingDocuments" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <h3>10.0 Approval and Closure</h3>
+        <p>
+        <div id="approvalAndClosure" class="placeholder" contenteditable="true" rows="4" cols="50"></div>
+        </p>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <!-- Close button -->
+            <span class="close" onclick="closeModal()">&times;</span>
+            <!-- Add your form elements here -->
+            <h2 id="modalTitle">New Screen</h2>
+            <textarea id="textareaInModal1" class="modal-textarea" rows="4" cols="50"></textarea>
+            <div class="input-container">
+              <input type="text" id="inputFieldInModal" class="modal-input" placeholder="Enter details...">
+            </div>
+            <button id="generateDeviationDescription" class="submit-button"
+              onclick="generateSection('Deviation Description')">Generate Deviation Description</button>
+            <button id="generateImpactAssessment" class="submit-button"
+              onclick="generateSection('Impact Assessment')">Generate Impact Assessment</button>
+            <button id="generateRootCauseAnalysis" class="submit-button"
+              onclick="generateSection('Root Cause Analysis')">Generate Root Cause Analysis</button>
+            <button id="generateCorrectiveActions" class="submit-button"
+              onclick="generateSection('Corrective Actions')">Generate Corrective Actions</button>
+            <button id="generatePreventiveActions" class="submit-button"
+              onclick="generateSection('Preventive Actions')">Generate Preventive Actions</button>
+            <button id="generateInvestigationProcedure" class="submit-button"
+              onclick="generateSection('Investigation Procedure')">Generate Investigation Procedure</button>
+            <button id="generateQualityAssuranceReview" class="submit-button"
+              onclick="generateSection('Quality Assurance Review')">Generate Quality Assurance Review</button>
+            <button id="generateCapaImplementation" class="submit-button"
+              onclick="generateSection('CAPA Implementation')">Generate CAPA Implementation</button>
+            <button id="generateSupportingDocuments" class="submit-button"
+              onclick="generateSection('Supporting Documents')">Generate Supporting Documents</button>
+            <button id="generateApprovalAndClosure" class="submit-button"
+              onclick="generateSection('Approval and Closure')">Generate Approval and Closure</button>
+            <button class="submit-button" id="addButton" style="display: none;"
+              onclick="pasteDataIntoModal()">Add</button>
+          </div>
+        </div>
+
+        <button class="pdfbtn" onclick="downloadPDF()">Download PDF</button>
+
+      </div>
+      {% include 'chatbot.html' %}
+
+    </div>
+
+    <script>
+      document.getElementById('imageLoader').addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file && file.type === 'image/jpeg') {
+              const reader = new FileReader();
+              reader.onload = function(e) {
+                  const img = document.createElement('img');
+                  img.classList.add('uploaded-image'); // Add a class for styling
+                  img.src = e.target.result;
+                  document.getElementById('imageContainer').appendChild(img);
+              }
+              reader.readAsDataURL(file);
+          } else {
+              alert('Please select a valid JPG file.');
+          }
+      });
+  </script>
+
+
+
+</body>
+
+</html>

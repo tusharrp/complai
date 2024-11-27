@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Standard Operating Procedure (SOP) Template</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sop.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="{{ url_for('static', filename='js/sop.js') }}"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Toggle Sidebar Button -->
+    <button id="sidebarToggleButton" class="sidebar-toggle-button" onclick="toggleSidebar()">>->-></button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+      <!-- Sidebar content -->
+      <!-- Collaboration section -->
+      <div class="section collaboration-section">
+        <h2>Collaboration</h2>
+        <form id="employeeForm">
+          <!-- Employee 1 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 1" id="employee-textbox-1">
+            <button type="button" class="add-button" data-index="1" onclick="addEmployee(event, 1)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 1)"><i class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 1</h2>
+              <form>
+                <label for="name1">Name:</label>
+                <input type="text" id="name1" name="name1" placeholder="Name"><br><br>
+                <label for="email1">Email:</label>
+                <input type="email" id="email1" name="email1" placeholder="Email"><br><br>
+                <label for="jobDetails1">Job Details:</label>
+                <textarea id="jobDetails1" name="jobDetails1" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 1)">Add Employee</button>
+              </form>
+            </div>
+            <ul id="employee-list"></ul>
+          </div>
+          <!-- Employee 2 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 2" id="employee-textbox-2">
+            <button type="button" class="add-button" data-index="2" onclick="addEmployee(event, 2)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 2)"><i class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 2</h2>
+              <form>
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" name="name2" placeholder="Name"><br><br>
+                <label for="email2">Email:</label>
+                <input type="email" id="email2" name="email2" placeholder="Email"><br><br>
+                <label for="jobDetails2">Job Details:</label>
+                <textarea id="jobDetails2" name="jobDetails2" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 2)">Add Employee</button>
+              </form>
+            </div>
+          </div>
+          <!-- Employee 3 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 3" id="employee-textbox-3">
+            <button type="button" class="add-button" data-index="3" onclick="addEmployee(event, 3)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 3)"><i class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 3</h2>
+              <form>
+                <label for="name3">Name:</label>
+                <input type="text" id="name3" name="name3" placeholder="Name"><br><br>
+                <label for="email3">Email:</label>
+                <input type="email" id="email3" name="email3" placeholder="Email"><br><br>
+                <label for="jobDetails3">Job Details:</label>
+                <textarea id="jobDetails3" name="jobDetails3" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 3)">Add Employee</button>
+              </form>
+            </div>
+          </div>
+          <!-- Employee 4 -->
+          <div class="employee-input-container">
+            <input type="text" class="employee-textbox" placeholder="Employee 4" id="employee-textbox-4">
+            <button type="button" class="add-button" data-index="4" onclick="addEmployee(event, 4)">+</button>
+            <button type="button" class="delete-button" style="display: none;" onclick="deleteEmployee(event, 4)"><i class="fas fa-trash"></i></button>
+            <div class="employee-details-section" style="display: none;">
+              <h2>Employee Details 4</h2>
+              <form>
+                <label for="name4">Name:</label>
+                <input type="text" id="name4" name="name4" placeholder="Name"><br><br>
+                <label for="email4">Email:</label>
+                <input type="email" id="email4" name="email4" placeholder="Email"><br><br>
+                <label for="jobDetails4">Job Details:</label>
+                <textarea id="jobDetails4" name="jobDetails4" placeholder="Job Details"></textarea><br><br>
+                <button type="button" class="add-employee-button" onclick="addEmployeedata(event, 4)">Add Employee</button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <!-- Approvals section -->
+    <div class="section approvals-section">
+      <h2>Approvals</h2>
+      <input type="text" class="employee-textbox approval-input" placeholder="Approval 1">
+      <input type="text" class="employee-textbox approval-input" placeholder="Approval 2">
+      <input type="text" class="employee-textbox approval-input" placeholder="Approval 3">
+      <input type="text" class="employee-textbox approval-input" placeholder="Approval 4">
+      <button type="button" onclick="approve()" class="approvebutton">Approve</button>
+    </div>
+    <!-- Approvals section -->
+    <div class="section train-section">
+      <h2>Training</h2>
+      <input type="text" class="employee-textbox train-input" placeholder="Training 1">
+      <input type="text" class="employee-textbox train-input" placeholder="Training 2">
+      <input type="text" class="employee-textbox train-input" placeholder="Training 3">
+      <input type="text" class="employee-textbox train-input" placeholder="Training 4">
+      <button type="button" onclick="train()" class="trainbutton">Training</button>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="page-container" id="mainContent">
+    <div class="header">
+      <h1>Comply</h1>
+      <h2>ENVIRONMENT, HEALTH AND SAFETY DEPARTMENT</h2>
+    </div>
+
+    <div class="main-content">
+      <h1>Standard Operating Procedure (SOP)</h1>
+      <h2>Hot Work Permit</h2>
+      <table>
+        <tr>
+          <th>Section</th>
+          <th>Description</th>
+        </tr>
+      </table>
+      <h3>1.0 Objective</h3>
+      <p><div id="objective" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>2.0 Scope</h3>
+      <p><div id="scope" class="placeholder"  contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>3.0 Responsibility</h3>
+      <p><div id="responsibility" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+  
+      <h3>4.0 Accountability</h3>
+      <p><div id="accountability" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Abbreviation</h3>
+      <p><div id="abbreviation" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Procedure</h3>
+      <p><div id="procedure" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Authorization of the permit</h3>
+      <p><div id="authorization" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Preparation for hot work</h3>
+      <p><div id="preparation" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Annexures</h3>
+      <p><div id="annexures" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <h3>Revision History</h3>
+      <p><div id="revisionHistory" class="placeholder" contenteditable="true" rows="4" cols="50"></div></p>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- Close button -->
+          <span class="close" onclick="closeModal()">&times;</span>
+          <!-- Add your form elements here -->
+          <h2 id="modalTitle">New Screen</h2>
+          <textarea id="textareaInModal1" class="modal-textarea" rows="4" cols="50"></textarea>
+          <div class="input-container">
+            <input type="text" id="inputFieldInModal" class="modal-input" placeholder="Enter details...">
+          </div>
+          <button id="generateObjective" class="submit-button" onclick="generateSection('Objective')">Generate Objective</button>
+          <button id="generateScope" class="submit-button" onclick="generateSection('Scope')">Generate Scope</button>
+          <button id="generateResponsibility" class="submit-button" onclick="generateSection('Responsibility')">Generate Responsibility</button>
+          <button id="generateAccountability" class="submit-button" onclick="generateSection('Accountability')">Generate Accountability</button>
+          <button id="generateAbbreviation" class="submit-button" onclick="generateSection('Abbreviation')">Generate Abbreviation</button>
+          <button id="generateProcedure" class="submit-button" onclick="generateSection('Procedure')">Generate Procedure</button>
+          <button id="generateAuthorization" class="submit-button" onclick="generateSection('Authorization')">Generate Authorization</button>
+          <button id="generatePreparation" class="submit-button" onclick="generateSection('Preparation')">Generate Preparation</button>
+          <button id="generateAnnexures" class="submit-button" onclick="generateSection('Annexures')">Generate Annexures</button>
+          <button id="generateRevisionHistory" class="submit-button" onclick="generateSection('Revision History')">Generate Revision History</button>
+          <button class="submit-button" id="addButton" style="display: none;" onclick="pasteDataIntoModal()">Add</button>
+        </div>
+      </div>
+      
+      <button class="pdfbtn" onclick="downloadPDF()">Download PDF</button>
+      
+    </div>
+    {% include 'chatbot.html' %}
+
+  </div>
+
+
+</body>
+</html>

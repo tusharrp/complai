@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pharma Maintenance Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='analysis.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}"alt="Company Logo" id="company-logo">
+        <h1> Reactor Maintenance Analysis Report</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#reactor-core">Reactor Core</a></li>
+            <li><a href="#cooling-systems">Cooling Systems</a></li>
+            <li><a href="#containment">Containment</a></li>
+            <li><a href="#auxiliary-systems">Auxiliary Systems</a></li>
+            <li><a href="#findings">Findings & Recommendations</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>Maintenance Overview</h2>
+            <div class="chart-container">
+                <canvas id="overallMaintenanceChart"></canvas>
+            </div>
+            <p>Last Inspection Date: <span id="lastInspectionDate"></span></p>
+            <p>Report Generation Date: <span id="generationDate"></span></p>
+            <p>Next Scheduled Analysis: <span id="nextAnalysisDate"></span></p>
+        </section>
+
+        <section id="reactor-core">
+            <h2>Reactor Core Components</h2>
+            <h3>Reactor Internals</h3>
+            <div class="chart-container">
+                <canvas id="reactorInternalsChart"></canvas>
+            </div>
+            <h3>Reactor Head</h3>
+            <p>Status: Good - Regular inspections performed</p>
+            <h3>Reactor Control Rods</h3>
+            <p>Operational Status: Fully functional</p>
+            <h3>Reactor Core Support Structure</h3>
+            <div class="danger-indicator">
+                <p><strong>Warning:</strong> Critical wear detected on reactor core support structure</p>
+            </div>
+            <h3>Reactor Pressure Vessel Head</h3>
+            <p>Last Inspection: Within acceptable parameters</p>
+            <h3>Reactor Internals Grid Plate</h3>
+            <p>Maintenance Status: Scheduled for next outage</p>
+            <h3>Reactor Core Shroud</h3>
+            <p>Condition: Monitoring for potential cracks</p>
+        </section>
+
+        <section id="cooling-systems">
+            <h2>Cooling Systems</h2>
+            <h3>Coolant System Temperature Trends</h3>
+            <div class="chart-container">
+               <canvas id="coolantTemperatureChart"></canvas>
+            </div>
+            <h3>Heat Exchangers</h3>
+            <div class="chart-container">
+                <canvas id="heatExchangerEfficiencyChart"></canvas>
+            </div>
+            <h3>Condensers</h3>
+            <p>Efficiency: 92% - Within acceptable range</p>
+            <h3>Steam Generators</h3>
+            <div class="danger-indicator">
+                <p><strong>Attention:</strong> Steam generator #2 showing signs of increased corrosion</p>
+            </div>
+            <h3>Feedwater Systems</h3>
+            <p>Status: Operational - Minor maintenance required</p>
+            <h3>Reactor Coolant Pump (RCP) Motors</h3>
+            <p>Performance: All units operating at optimal levels</p>
+            <h3>Emergency Core Cooling Systems (ECCS)</h3>
+            <div class="danger-indicator">
+                <p><strong>Alert:</strong> ECCS pump #3 performance below expected levels</p>
+            </div>
+            <h3>Pressurizer</h3>
+            <p>Condition: Normal operation - No issues detected</p>
+        </section>
+
+        <section id="containment">
+            <h2>Containment Systems</h2>
+            <h3>Primary and Secondary Containment Systems</h3>
+            <p>Integrity: Maintained - Regular inspections conducted</p>
+            <h3>Reactor Containment Ventilation System</h3>
+            <p>Filtration Efficiency: 99.9% - Exceeds safety standards</p>
+            <h3>Reactor Containment Building</h3>
+            <p>Structural Integrity: Sound - No significant degradation observed</p>
+            <h3>Reactor Shielding</h3>
+            <p>Radiation Levels: Within permissible limits</p>
+        </section>
+
+        <section id="auxiliary-systems">
+            <h2>Auxiliary Systems</h2>
+            <h3>Turbines and Generators</h3>
+            <p>Efficiency Improvement: 5% increase after recent maintenance</p>
+            <h3>Reactor Control System</h3>
+            <p>Responsiveness: Meeting all operational parameters</p>
+            <h3>Auxiliary Feedwater System</h3>
+            <p>Reliability: 99.8% - Exceeds design specifications</p>
+            <h3>Reactor Instrumentation</h3>
+            <p>Calibration: All instruments within tolerance</p>
+            <h3>Control Room HVAC Systems</h3>
+            <p>Performance: Optimal - Ensuring proper environmental conditions</p>
+            <h3>Reactor Refueling Equipment</h3>
+            <p>Status: Ready for next scheduled refueling outage</p>
+        </section>
+
+        <section id="findings">
+            <h2>Key Findings and Recommendations</h2>
+            <h3>Key Findings</h3>
+            <ul id="key-findings-list">
+                <!-- Populated by JavaScript -->
+            </ul>
+            <h3>Recommendations</h3>
+            <ul id="recommendations-list">
+                <!-- Populated by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 pharma Plant Maintenance Division. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+    <!-- At the end of your analysis.html file, just before the closing </body> tag -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/get_dummy_data')
+            .then(response => response.json())
+            .then(data => {
+                createCharts(data);
+                populateTables(data);
+                populateLists(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+    
+    function createCharts(data) {
+        // Overall Maintenance Status Chart
+        new Chart(document.getElementById('overallMaintenanceChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Good', 'Fair', 'Poor'],
+                datasets: [{
+                    data: [data.overallMaintenance.good, data.overallMaintenance.fair, data.overallMaintenance.poor],
+                    backgroundColor: ['#2ecc71', '#f1c40f', '#e74c3c']
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Overall Maintenance Status'
+                }
+            }
+        });
+    
+        // Reactor Internals Maintenance Chart
+        new Chart(document.getElementById('reactorInternalsChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Maintenance Hours',
+                    data: data.reactorInternals,
+                    backgroundColor: '#3498db'
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Reactor Internals Maintenance Hours'
+                }
+            }
+        });
+    
+        // Heat Exchanger Efficiency Chart
+        new Chart(document.getElementById('heatExchangerEfficiencyChart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Efficiency (%)',
+                    data: data.heatExchangerEfficiency,
+                    borderColor: '#2ecc71',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Heat Exchanger Efficiency Trend'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 75,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+    
+    function populateTables(data) {
+        const coolantSystemTable = document.getElementById('coolantSystemTable').getElementsByTagName('tbody')[0];
+        data.coolantSystem.forEach(item => {
+            let row = coolantSystemTable.insertRow();
+            Object.values(item).forEach(text => {
+                let cell = row.insertCell();
+                cell.textContent = text;
+            });
+        });
+    }
+    
+    function populateLists(data) {
+        const keyFindingsList = document.getElementById('key-findings-list');
+        data.keyFindings.forEach(finding => {
+            let li = document.createElement('li');
+            li.textContent = finding;
+            keyFindingsList.appendChild(li);
+        });
+    
+        const recommendationsList = document.getElementById('recommendations-list');
+        data.recommendations.forEach(recommendation => {
+            let li = document.createElement('li');
+            li.textContent = recommendation;
+            recommendationsList.appendChild(li);
+        });
+    }
+
+    function createCharts(data) {
+    // ... (existing chart code) ...
+
+    // Coolant System Temperature Chart
+    new Chart(document.getElementById('coolantTemperatureChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [
+                {
+                    label: 'Reactor Core',
+                    data: [290, 292, 291, 293, 290, 291],
+                    borderColor: '#e74c3c',
+                    fill: false
+                },
+                {
+                    label: 'Primary Loop',
+                    data: [280, 282, 281, 283, 280, 281],
+                    borderColor: '#3498db',
+                    fill: false
+                },
+                {
+                    label: 'Secondary Loop',
+                    data: [230, 232, 231, 233, 230, 231],
+                    borderColor: '#2ecc71',
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Coolant System Temperature Trends (°C)'
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 200,
+                    max: 300
+                }
+            }
+        }
+    });
+}
+    </script>
+</body>
+</html>

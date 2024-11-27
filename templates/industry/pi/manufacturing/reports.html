@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Report Generation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .dropbtn, #dateBtn { padding: 10px; font-size: 16px; border: none; cursor: pointer; }
+        .dropbtn { background-color: #4CAF50; color: white; }
+        #dateBtn { background-color: #008CBA; color: white; }
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #f1f1f1; }
+        .show { display: block; }
+        .parameter-row { display: flex; margin-bottom: 10px; }
+        .parameter-name { width: 200px; font-weight: bold; }
+        .parameter-value { flex-grow: 1; position: relative; }
+        .textarea-container { position: relative; width: 75%; }
+        textarea { width: 100%; height: 50px; padding-right: 30px; }
+        .camera-btn { position: absolute; right: 5px; bottom: 5px; background: none; border: none; font-size: 24px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">Report of</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Chiller Operation</a>
+                <a href="#">Quality Control</a>
+                <a href="#">Production</a>
+                <a href="#">Inventory</a>
+                <a href="#">Maintenance</a>
+                <a href="#">Safety</a>
+                <a href="#">Environmental Monitoring</a>
+                <a href="#">Packaging</a>
+                <a href="#">Research & Development</a>
+                <a href="#">Regulatory Compliance</a>
+                <a href="#">Supply Chain</a>
+                <a href="#">Equipment Validation</a>
+                <a href="#">Training</a>
+                <a href="#">Waste Management</a>
+                <a href="#">Energy Consumption</a>
+            </div>
+        </div>
+        <input type="date" id="dateBtn">
+    </div>
+
+    <div class="report-body">
+        <h2>Chiller Operation Report</h2>
+        <div id="parameters"></div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function captureImage(param) {
+            alert(`Capturing image for ${param}`);
+        }
+
+        const parameters = [
+            "Chiller ID", "Operating Status", "Inlet Temperature", "Outlet Temperature",
+            "Evaporator Pressure", "Condenser Pressure", "Compressor Current",
+            "Refrigerant Level", "Oil Pressure", "Cooling Capacity"
+        ];
+
+        const parametersContainer = document.getElementById("parameters");
+        parameters.forEach(param => {
+            const row = document.createElement("div");
+            row.className = "parameter-row";
+            row.innerHTML = `
+                <div class="parameter-name">${param}:</div>
+                <div class="parameter-value">
+                    <div class="textarea-container">
+                        <textarea placeholder="Enter ${param} data"></textarea>
+                        <button class="camera-btn" onclick="captureImage('${param}')">📷</button>
+                    </div>
+                </div>
+            `;
+            parametersContainer.appendChild(row);
+        });
+    </script>
+</body>
+</html>

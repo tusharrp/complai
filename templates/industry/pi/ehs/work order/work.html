@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Order Request Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='work.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Toggle Sidebar Button -->
+    <button id="sidebarToggleButton" class="sidebar-toggle-button" onclick="toggleSidebar()"><<<</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+        <!-- Collaboration section -->
+        <div class="section collaboration-section">
+            <h2>Collaboration</h2>
+            <form id="employeeForm">
+                <div id="employeeContainer">
+                    <!-- Employee inputs will be dynamically added here -->
+                </div>
+                <button type="button" onclick="addNewEmployeeInput()">Add Employee</button>
+            </form>
+        </div>
+
+        <!-- Approvals section -->
+        <div class="section approvals-section">
+            <h2>Approvals</h2>
+            <input type="text" class="employee-textbox approval-input" placeholder="Approval 1">
+            <input type="text" class="employee-textbox approval-input" placeholder="Approval 2">
+            <input type="text" class="employee-textbox approval-input" placeholder="Approval 3">
+            <input type="text" class="employee-textbox approval-input" placeholder="Approval 4">
+            <button type="button" onclick="approve()" class="approvebutton">Approve</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="report-number" id="reportNumber">Report #</div>
+            <div class="header-text">
+                <h1>WORK ORDER REQUEST FORM</h1>
+                <h2>MAINTENANCE DEPARTMENT</h2>
+            </div>
+        </div>
+        <div class="form-container">
+            <form id="workOrderForm">
+                <div class="form-group">
+                    <label for="requesterName">Requester Name:</label>
+                    <input type="text" id="requesterName" name="requesterName" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone:</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Urgent:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="urgentYes" name="urgent" value="yes">
+                        <label for="urgentYes">Yes</label>
+                        <input type="radio" id="urgentNo" name="urgent" value="no">
+                        <label for="urgentNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="room">Room:</label>
+                    <input type="text" id="room" name="room" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description of Work Order Requested:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <hr>
+                <h3>Maintenance Use Only</h3>
+                <div class="form-group">
+                    <label for="completedDescription">Description of completed Work Order and Material Used:</label>
+                    <textarea id="completedDescription" name="completedDescription" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="completedBy">Completed By:</label>
+                    <input type="text" id="completedBy" name="completedBy">
+                </div>
+                <div class="form-group">
+                    <label for="completedDate">Date:</label>
+                    <input type="date" id="completedDate" name="completedDate">
+                </div>
+                <div class="form-group">
+                    <label for="timeStarted">Time Started:</label>
+                    <input type="time" id="timeStarted" name="timeStarted">
+                </div>
+                <div class="form-group">
+                    <label for="timeEnded">Time Ended:</label>
+                    <input type="time" id="timeEnded" name="timeEnded">
+                </div>
+                <div class="form-group">
+                    <a href="{{ url_for('calendar') }}" id="submitWorkOrder" class="button">Submit Work Order</a>
+                </div>
+            </form>
+        </div>
+        <p class="footer-note">
+            Maintenance Department receives and processes request work orders daily. Our overall goals are to
+            schedule and complete these services in a timely manner. In order to perfect our goals, each Campus must
+            complete a work order form and return to the Maintenance office. Thank you in advance for your cooperation.
+        </p>
+    </div>
+    <script src="{{ url_for('static', filename='js/work.js') }}"></script>
+</body>
+</html>

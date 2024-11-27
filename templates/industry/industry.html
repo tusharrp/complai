@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comply | Industry</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='industry.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top" data-bs-theme="light">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-weight: bold; color: #fff;">Comply</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border-color: #fff; background-color: #4CAF50; color: #fff;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link logout-button" href="/Comply/index.html" style="color: #fff;">Log-Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container mt-5" style="margin-top: 70px;">
+        <!-- Your content goes here -->
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <a href="{{ url_for('industry.pi') }}" class="card-link">
+                <div class="card">
+                        <img src="https://indoreinstitute.com/wp-content/uploads/2021/09/pharmaceutical-industry.jpg" class="card-img-top" alt="Card Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Pharmaceutical Industry</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.QsqA0lOY2Gkruxhg_6NOmgHaE7&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Biotechnology Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.aRKBsGI_8rEisskUi1It8AHaEE&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Aerospace and Defense Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.HFnc7MYlX7VhdY-oW7F4YwHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Healthcare Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.owYs1zRTVoYIiaGyyegsCQHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Automotive Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.7VFT2sj7GtcivGtblS6EYgHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Financial Services Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.xZy01t2g2X1yYA_GaCG7zQHaEL&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Information Technology (IT) Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.NLQuOyvcmAKIOfrE7xnuCgHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Energy and Utilities Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.NV1dLqdXzNBuunA-aDTpbQHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Manufacturing Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.gZreq1IIbTkA_xWpombXKAHaEO&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Telecommunications Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.fXLtOm-oXNFtF28sqGBTNwHaFB&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Food and Beverage Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.bEcKt7Ie6wf-8kUQQ2q3GQHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Environmental Services Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.LPhj2TytrSjCUPNsrgDH1gHaEy&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Construction and Engineering Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.d4aQAHoZbJopypG5L4Ck8wHaDt&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Legal Services Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.Z_ddrQurpt3Fnmq-xme6mQHaE9&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Chemical Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.loJmixJ-0W4kdYCl5INoEQHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Education and Research Institutions</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.vDeCJ3KAXe7HAuYRcsgD6wHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Aviation Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse3.explicit.bing.net/th?id=OIP.QXiIW83f9ErZAPqG10DoNwHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Government and Public Sector</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.ZMww9He_9S_DD_3WtWsStgHaD4&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Logistics and Supply Chain Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.8jCG6QO2rPiNaPdI9ghXegAAAA&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Insurance Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.x92zDvaqKqB6KZBRLyKyQwHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Real Estate and Property Management</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.fC9jx7h79t8AN12K55XiMgHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Retail Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.lhx-wVFFKM7dCabvUC_vHwHaHa&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Travel and Hospitality Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.AyjcfCsjMYw3wRtS_Z9NBAHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Media and Entertainment Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.9MpPzvmUFS8ppMlMtVR1sQHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Advertising and Marketing Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.AVS6KB3OflKLdATUcqp0ZQAAAA&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Mining and Extractive Industries</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.Div5LLfbOERUMBRvG6VU0AHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Textile and Apparel Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.JKrfDYQtPgEMjWwcXQEPAQHaE7&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Water and Wastewater Management</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.9hyxT4blYDvQ-fWdXTkhWgAAAA&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Pharmaceutical Research and Development</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.D9paRamPWSYP426o5cnzIAHaEy&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Nonprofit and Social Services Organizations</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.VJCw1Ij6v9WjRu2oGr5viQHaFj&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Biomedical Engineering and Research</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.cv_PAe2kjUzWBF8RdPyn6wHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Public Health Organizations</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://www.smartsheet.com/sites/default/files/ic-og-HumanResourceManagement-FacebookLinkedIn_0.jpg" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Human Resources and Personnel Management</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.6XZX75BpiTDXWo217DFIXwHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Fitness and Wellness Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://www.equipmentandcontracting.com/wp-content/uploads/2018/06/shutterstock_614463005.jpg" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Forestry and Timber Industry</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Q27SiuYif9rdVWvQ3dsKnQHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Renewable Energy Industry</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Row of Cards -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.1ILPEtXXYmvnPIHhh_YxAwHaEo&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">E-commerce and Online Retail</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.RjiIxYFUah6p7iFrQD7a5AHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Hospitality and Event Management</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://programmes.cegepmontpetit.ca/wp-content/uploads/sites/187/2021/08/telecomm_principale.jpg" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Telecommunications Infrastructure</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="https://tse4.explicit.bing.net/th?id=OIP.w0kBriafAD15OCxJ3O4iIAHaE-&pid=Api&P=0&h=180" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Waste Management and Recycling</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'chatbot.html' %}
+
+    </div>
+
+    
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/industry.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishbone Diagram Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fishbone.css') }}">
+    <style>
+        .fishbone-diagram {
+            background-image: url("{{ url_for('static', filename='images/fishbone_background.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fishbone Diagram Generator</h1>
+        <div class="input-section">
+            <label for="problem">Problem Statement:</label>
+            <input type="text" id="problem" placeholder="Enter the problem">
+            <button id="generate">Generate Diagram</button>
+        </div>
+        <div id="diagram" class="fishbone-diagram">
+            <div class="spine"></div>
+            <div class="category" id="man">
+                <h3>Man</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="category" id="machine">
+                <h3>Machine</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="category" id="material">
+                <h3>Material</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="category" id="method">
+                <h3>Method</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="category" id="measurement">
+                <h3>Measurement</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="category" id="environment">
+                <h3>Environment</h3>
+                <textarea class="causes" readonly></textarea>
+            </div>
+            <div class="problem-statement"></div>
+        </div>
+        <button id="download">Download as JPG</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/fishbone.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('download').addEventListener('click', function() {
+            html2canvas(document.getElementById('diagram')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'fishbone_diagram.jpg';
+                link.href = canvas.toDataURL('image/jpeg');
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

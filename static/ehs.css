@@ -1,0 +1,100 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Light gradient background */
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Dark text color */
+  padding-top: 100px;
+  overflow-y: auto;
+}
+
+.navbar {
+  position: fixed;
+  background-color: #fff; /* White background */
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Neon border style */
+.neon-border {
+  box-shadow: 0 0 10px 5px #ffffff;
+}
+
+/* Custom style for the logout button */
+.logout-button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Changed to green */
+  color: #ffffff; /* Changed to white */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+.logout-button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Card styles */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Added padding */
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px #4CAF50; /* Green shadow on hover */
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Added padding */
+}
+
+.card-title {
+  margin-bottom: 10px; /* Adjusted margin */
+  font-size: 1.5rem;
+}
+
+.card-subtitle {
+  color: #6c757d; /* Muted text color */
+  font-size: 1rem;
+  margin-bottom: 0; /* Adjusted margin */
+}
