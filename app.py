@@ -17,10 +17,8 @@ from routes.fault_tree import fault_tree_bp
 from routes.reports import reports_bp 
 from routes.jsa import jsa_bp 
 from routes.reactor import reactor_bp 
-from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://complai.onrender.com"])
 
 app.register_blueprint(industry_bp, url_prefix='/industry')
 app.register_blueprint(pi_bp, url_prefix='/industry/pi')
