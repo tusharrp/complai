@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request, render_template
 import requests
 from models.google_api import generate_text, call_google_api
+import os
 
 chatbot_bp = Blueprint('chatbot', __name__)
 
